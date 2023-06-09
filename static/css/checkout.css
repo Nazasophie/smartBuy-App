@@ -1,0 +1,254 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    margin: auto;
+    display: flex;
+    align-items: center;
+    background-color: #EEEEEE;
+    width: 1200px;
+    height: 80px;
+    border-radius: 0px 0px 8px 8px;
+}
+header a{
+    margin-left: 20px;
+}
+header a img{
+    width: 150px;
+}
+header p{
+    font-size: 20px;
+    font-weight: 700;
+    font-style: normal;
+    margin-left: 350px;
+}
+
+.main-first-div {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.first-div {
+    margin-right: 70px;
+    width: 716.75px;
+    height: 390px;
+    background-color: #EEEEEE;
+    border-radius: 8px;
+}
+
+.first-input {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 0px 20px;
+}
+
+.first-input-1 p{
+    font-weight: 700;
+}
+.first-input-1 input{
+    width: 306.28px;
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid #BDBDBD;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.first-input-2 p{
+    font-weight: 700;
+}
+.first-input-2 input{
+    width: 306.28px;
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid #BDBDBD;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.main-first-div h4 {
+    padding: 20px 0px 10px 20px;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.form-div-1 {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 0px 20px;
+}
+
+.address-div p{
+    font-weight: 700;
+}
+.address-div input{
+    width: 306.28px;
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid #BDBDBD;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.phone-div p{
+    font-weight: 700;
+}
+
+.phone-div input{
+    width: 306.28px;
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid #BDBDBD;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+
+.form-div-2 {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 0px 20px;
+}
+
+.state-div p{
+    font-weight: 700;
+}
+.state-div input{
+    width: 306.28px;
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid #BDBDBD;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.city-div p{
+    font-weight: 700;
+}
+
+.city-div input{
+    width: 306.28px;
+    height: 45px;
+    border-radius: 4px;
+    border: 1px solid #BDBDBD;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.submit-edit-div {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px 0px 20px;
+}
+
+.submit-edit-div .save-info {
+    width: 306.28px;
+    height: 43.92px;
+    border: 0px;
+    border-radius: 8px;
+    background-color: #F2994A;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.submit-edit-div .save-info:hover {
+    background-color: #e78834;
+}
+.submit-edit-div .edit-info {
+    width: 306.28px;
+    height: 43.92px;
+    border: 1px solid #000000;
+    border-radius: 8px;
+    /* background-color: #F2994A; */
+    color: #000000;
+    cursor: pointer;
+}
+.submit-edit-div .edit-info:hover {
+    border: 1px solid #e78834;
+    color: #e78834;
+}
+
+
+
+.second-div {
+    width: 410px;
+    background-color: #EEEEEE;
+    border-radius: 8px;
+    padding: 10px 0px 10px 0px;
+}
+
+.back-to-cart-div {
+    width: 128px;
+    height: 44px;
+    border-radius: 8px;
+    border: 1px solid #000000;
+    text-align: center;
+    padding: 13px 0px 0px 10px;
+    position: relative;
+    margin-left: 10px;
+}
+.back-to-cart-div a{
+    text-decoration: none;
+    color: #000000;
+}
+.back-to-cart-div a img  {
+    position: absolute;
+    left: 5px;
+    top: 13px;
+    width: 20px;
+}
+
+.order-sum-div{
+    margin-top: 10px;
+    padding: 10px 0px;
+    border-top: 1px solid;
+    border-bottom: 1px solid;
+}
+.order-sum-div p{
+    margin-left: 10px;
+    font-size: 18px;
+}
+
+.product-sum-div {
+    display: flex;
+    padding: 10px 10px;
+    justify-content: space-between;
+}
+.product-sum-div p{
+    margin-top: 23px;
+}
+
+.second-div button {
+    margin: 40px 0px 0px 30px;
+    width: 351px;
+    height: 54px;
+    border: 0px;
+    border-radius: 8px;
+    background-color: #F2994A;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+.second-div button:hover {
+    background-color: #e78834;
+}
+
+.main-second-div{
+    width: 1200px;
+    margin: auto;
+}
+.main-second-div-1{
+    width: 716px;
+    margin: 20px 0px 20px 0px;
+    height: 196px;
+    background-color: #EEEEEE;
+    border-radius: 8px;
+    padding: 20px;
+}
+.main-second-div-1 p{
+    border-bottom: 1px solid;
+    padding-bottom: 10px;
+}
