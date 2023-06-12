@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 /* Styling for the entire page */
+
+p{
+  font-family: 'Roboto', sans-serif;
+}
+
 body {
   margin: 0;
   padding: 0;

@@ -1,11 +1,23 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import JsonResponse
 import json
 import datetime
 from .models import * 
 from .utils import cookieCart, cartData, guestOrder
+from django.contrib import messages
 
 # Create your views here.
+def index(request):
+	data = cartData(request)
+
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+
+	products = Product.objects.all()
+	context = {'products':products, 'cartItems':cartItems}
+	return render(request, 'index.html', context)
+
 
 def signin(request):
 	
@@ -19,16 +31,6 @@ def signup(request):
 	return render(request, 'registration/signup.html', context)
 
 
-def index(request):
-	data = cartData(request)
-
-	cartItems = data['cartItems']
-	order = data['order']
-	items = data['items']
-
-	products = Product.objects.all()
-	context = {'products':products, 'cartItems':cartItems}
-	return render(request, 'index.html', context)
 
 
 def cart(request):
@@ -53,9 +55,27 @@ def checkout(request):
 
 
 def fashion(request):
-	
-	context = {}
+	data = cartData(request)
+
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+
+	fashions = Fashion.objects.all()
+	context = {'fashions':fashions, 'cartItems':cartItems}
 	return render(request, 'fashion.html', context)
+
+
+def productdetail(request, id):
+	data = cartData(request)
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+ 
+	products = Product.objects.all()
+	products = Product.objects.get(id=id)
+	context = {'products':products, 'cartItems':cartItems}
+	return render(request, 'product-detail.html', context)
 
 
 def updateItem(request):

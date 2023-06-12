@@ -1,17 +1,19 @@
 <!DOCTYPE html>
+{% load static %}
+{% load humanize %}
 <html lang="en">
 
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <link rel="stylesheet" href="checkout.css" />
+    <link rel="stylesheet" href="{% static 'css/checkout.css'%}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SmartBuy</title>
 </head>
 
 <body>
     <header>
-        <a href=""><img src="images/SMARTbuylogo.svg" alt="" /></a>
+        <a href="{% url 'index' %}"><img src="{% static 'images/SMARTbuylogo.svg' %}" alt="" /></a>
         <p>Order Details</p>
     </header>
 
@@ -65,20 +67,22 @@
             <div>
                 <div class="second-div">
                     <div class="back-to-cart-div">
-                        <a href=""><img src="images/Left-arrow.svg" alt="" /> Back to cart</a>
+                        <a href="{% url 'cart' %}"><img src="{% static 'images/Left-arrow.svg' %}" alt="" /> Back to cart</a>
                     </div>
 
                     <div class="order-sum-div">
                         <p>Order Summary</p>
                     </div>
                     <!-- Loop start -->
+                    {% for item in items %}
                     <div class="product-sum-div">
-                        <img src="images/small-item-img.png" alt="" />
-                        <p>Product 1</p>
-                        <h4><img src="images/naira.svg" alt="" />5,000.00</h4>
-                        <p>x2</p>
+                        <img id="product-img" src="{{item.product.imageURL}}" alt="" />
+                        <p>{{item.product.name|truncatechars:9}}</p>
+                        <h4><img src="{% static 'images/naira.svg' %}" alt="" />{{item.product.price|floatformat:2|intcomma}}</h4>
+                        <p>x{{item.quantity}}</p>
                     </div>
-                    <!-- Loop start -->
+                    {% endfor %}
+                    <!-- Loop end -->
                     <button>CONFIRM ORDER</button>
                 </div>
             </div>

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 
 <head>
@@ -7,34 +8,91 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css" rel="stylesheet"
         type="text/css" />
-    <link rel="stylesheet" href="header-footer.css" />
-    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/index.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/cart.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/fashion.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/product-detail.css' %}" />
     <script src="https://kit.fontawesome.com/d08bc766f2.js" crossorigin="anonymous"></script>
     <title>SmartBuy</title>
+
+    <script type="text/javascript">
+		var user = '{{request.user}}'
+
+		function getToken(name) {
+		    var cookieValue = null;
+		    if (document.cookie && document.cookie !== '') {
+		        var cookies = document.cookie.split(';');
+		        for (var i = 0; i < cookies.length; i++) {
+		            var cookie = cookies[i].trim();
+		            // Does this cookie string begin with the name we want?
+		            if (cookie.substring(0, name.length + 1) === (name + '=')) {
+		                cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+		                break;
+		            }
+		        }
+		    }
+		    return cookieValue;
+		}
+		var csrftoken = getToken('csrftoken')
+
+		function getCookie(name) {
+		    // Split cookie string and get all individual name=value pairs in an array
+		    var cookieArr = document.cookie.split(";");
+
+		    // Loop through the array elements
+		    for(var i = 0; i < cookieArr.length; i++) {
+		        var cookiePair = cookieArr[i].split("=");
+
+		        /* Removing whitespace at the beginning of the cookie name
+		        and compare it with the given string */
+		        if(name == cookiePair[0].trim()) {
+		            // Decode the cookie value and return
+		            return decodeURIComponent(cookiePair[1]);
+		        }
+		    }
+
+		    // Return null if not found
+		    return null;
+		}
+		var cart = JSON.parse(getCookie('cart'))
+
+		if (cart == undefined){
+			cart = {}
+			console.log('Cart Created!', cart)
+			document.cookie ='cart=' + JSON.stringify(cart) + ";domain=;path=/"
+		}
+		console.log('Cart:', cart)
+	
+	</script>
+
 </head>
 
 <body>
     <header>
         <div class="logo-div">
-            <a href="index.html"><img src="images/SMARTbuylogo.svg" alt="" /></a>
+            <a href="{% url 'index'%}"><img src="{% static 'images/SMARTbuylogo.svg' %}" alt="" /></a>
         </div>
         <div class="search-div">
-            <img src="images/search-icon.svg" alt="" /><input type="search" name="" id="" placeholder="Search" />
+            <img src="{% static 'images/search-icon.svg' %}" alt="" /><input type="search" name="" id="" placeholder="Search" />
         </div>
         <div class="links-div">
             <div class="dropdown">
-                <a href=""><img class="acct" src="images/profile.svg" alt="" />Account <img class="acct"
-                        src="images/drop-down.svg" alt=""></a>
+                <a href=""><img class="acct" src="{% static 'images/profile.svg' %}" alt="" />{{user}} <img class="acct"
+                        src="{% static 'images/drop-down.svg' %}" alt=""></a>
                 <div class="dropdown-content">
-                    <a href=""><img class="acct-img" src="images/User.svg" alt="">My Account</a>
-                    <a href="signin.html"><img class="acct-img" src="images/Sign In.svg" alt=""> Sign In</a>
-                    <a href="signuo.html"><img class="acct-img" src="images/Add User Male.svg" alt=""> Sign Up</a>
-                    <a href=""><img class="acct-img" src="images/Add Shopping Cart.svg" alt=""> Orders</a>
+                    <a href=""><img class="acct-img" src="{% static 'images/User.svg' %}" alt="">My Account</a>
+                    <a href="{% url 'signin' %}"><img class="acct-img" src="{% static 'images/Sign In.svg' %}" alt=""> Sign In</a>
+                    <a href="{% url 'signup' %}"><img class="acct-img" src="{% static 'images/Add User Male.svg' %}" alt=""> Sign Up</a>
+                    <a href=""><img class="acct-img" src="{% static 'images/Add Shopping Cart.svg' %}" alt=""> Orders</a>
                 </div>
             </div>
             <div class="dropdown">
-                <a href=""><img class="acct" src="images/message-question.svg" alt="" />Help <img class="acct"
-                        src="images/drop-down.svg" alt=""></a>
+                <a href=""><img class="acct" src="{% static 'images/message-question.svg' %}" alt="" />Help <img class="acct"
+                        src="{% static 'images/drop-down.svg' %}" alt=""></a>
                 <div class="dropdown-content">
                     <a href="">FAQ</a>
                     <a href="">About Us</a>
@@ -42,19 +100,20 @@
                 </div>
             </div>
             <div>
-                <a href=""><img src="images/saved.svg" alt="" />Saved</a>
+                <a href=""><img src="{% static 'images/saved.svg' %}" alt="" />Saved</a>
             </div>
             <div class="cart-div">
-                <a href=""><img src="images/shopping-cart.svg" alt="" />Cart</a>
-                <p class="cart-total">0</p>
+                <a href="{% url 'cart' %}"><img src="{% static 'images/shopping-cart.svg' %}" alt="" />Cart</a>
+                <p id="cart-total" class="cart-total">{{cartItems}}</p>
             </div>
         </div>
     </header>
     <!--  -->
     <main>
+    {% block content %}
 
+    {% endblock content %}
     </main>
-
     <footer>
         <div class="footer-div-0">
             <h4>CONTACT SMARTBUY</h4>
@@ -85,22 +144,22 @@
             <h4>PAYMENT METHODS</h4>
 
             <div>
-                <a href=""><img src="images/tabler_brand-visa.svg" alt=""></a><br>
-                <a href=""><img src="images/uim_master-card.svg" alt=""></a>
+                <a href=""><img src="{% static 'images/tabler_brand-visa.svg' %}" alt=""></a><br>
+                <a href=""><img src="{% static 'images/uim_master-card.svg' %}" alt=""></a>
             </div>
         </div>
         <div class="footer-div-3">
             <h4>CONTACT SMARTBUY</h4>
 
             <div>
-                <a href=""><img src="images/akar-icons_twitter-fill.svg" alt=""></a>
-                <a href=""><img src="images/ri_facebook-fill.svg" alt=""></a>
-                <a href=""><img src="images/basil_instagram-solid.svg" alt=""></a>
+                <a href=""><img src="{% static 'images/akar-icons_twitter-fill.svg' %}" alt=""></a>
+                <a href=""><img src="{% static 'images/ri_facebook-fill.svg' %}" alt=""></a>
+                <a href=""><img src="{% static 'images/basil_instagram-solid.svg' %}" alt=""></a>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="{% static 'js/script.js'%}"></script>
+    <script src="{% static 'js/cart.js'%}"></script>
 </body>
-
 </html>

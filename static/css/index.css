@@ -4,16 +4,20 @@
     box-sizing: border-box;
 }
 
+p{
+    font-family: 'Roboto', sans-serif;
+}
+
 body {
-    /* padding: 0px 120px 0px 120px; */
     max-width: 1200px;
     margin: auto;
-   
 }
 
 .nav-aside {
     display: flex;
-    margin-bottom: 90px;
+    margin-top: 70px;
+    margin-left: -20px;
+    padding-top: 80px;
 }
 
 /* nav style start */
@@ -21,13 +25,13 @@ nav {
     width: 307px;
     background-color: #EEEEEE;
     height: 540px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     padding-top: 10px;
 }
 
 nav div {
-    width: 284px;
-    height: 55px;
+    width: 274px;
+    height: 53px;
     border: 1px #4F4F4F solid;
     display: flex;
     align-items: center;
@@ -48,35 +52,35 @@ nav div a {
 }
 nav div .fash {
     margin-top: 20px;
-    margin-left: 180px;
+    margin-left: 170px;
 }
 nav div .elect {
     margin-top: 20px;
-    margin-left: 152px;
+    margin-left: 140px;
 }
 nav div .phone-tab {
     margin-top: 20px;
-    margin-left: 123px;
+    margin-left: 103px;
 }
 nav div .phone-acc {
     margin-top: 20px;
-    margin-left: 105px;
+    margin-left: 75px;
 }
 nav div .com {
     margin-top: 20px;
-    margin-left: 152px;
+    margin-left: 132px;
 }
 nav div .gam {
     margin-top: 20px;
-    margin-left: 172px;
+    margin-left: 158px;
 }
 nav div .h-b {
     margin-top: 20px;
-    margin-left: 114px;
+    margin-left: 94px;
 }
 nav div .other {
     margin-top: 20px;
-    margin-left: 187px;
+    margin-left: 177px;
 }
 
 /* dropdown-categories style start */
@@ -91,7 +95,7 @@ nav div .other {
     left: -20px;
     background-color: #FFFFFF;
     min-width: 150px;
-    height: 150px;
+    height: 70px;
     border-radius: 8px;
     padding: 5px;
     z-index: 1;
@@ -101,11 +105,11 @@ nav div .other {
     padding: 13px 0px 0px 20px;
     text-decoration: none;
     display: block;
-    margin: 0px 0px 0px 20px;
+    margin: 0px 0px 0px 10px;
     position: relative;
 }
 .dropdown-content-categories a:hover {
-    font-size: 19px;
+    font-size: 17px;
 }
 .dropdown-categories:hover .dropdown-content-categories {
     display: block;
@@ -117,7 +121,7 @@ nav div .other {
 /* aside style start */
 aside {
     width: 893px;
-    margin-top: 10px;
+    /* margin-top: 10px; */
     /* background-color: black; */
 }
 aside img {
@@ -148,7 +152,7 @@ aside img {
 .navigation-manual{
     position: absolute;
     width: 900px;
-    margin-top: -40px;
+    margin-top: -45px;
     display: flex;
     justify-content: center;
 
@@ -228,6 +232,7 @@ main .first-cont {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin: 90px 0px 0px -40px;
 }
 main .div-1 .p-1 {
     font-size: 48px;
@@ -242,8 +247,8 @@ main .first-cont .div-3 p {
 
 main .second-cont {
     display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
+    justify-content: space-around;
+    margin: 10px 0px 0px -40px;
 }
 main .second-div-0 {
     display: flex;
@@ -267,7 +272,7 @@ main .second-div-0 .div-1 p {
 .third-cont {
     background-color: #EEEEEE;
     border-radius: 8px;
-    margin: 30px 0px 30px 0px;
+    margin: 30px 0px 30px -40px;
     width: 1200px;
     /* height: 644px; */
     /* height: 940px; */
@@ -286,12 +291,13 @@ main .second-div-0 .div-1 p {
 .third-cont .item-0 {
     background-color: #FFFFFF;
     width: 270px;
-    height: 440px;
+    height: 470px;
     margin: 0px 10px 0px 10px;
     border-radius: 8px;
-    padding: 0px 10px 0px 10px;
+    padding: 0px 10px 10px 10px;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
     margin: 10px 0px 10px 15px;
+    position: relative;
 }
 .third-cont .item-0 a{
     text-decoration: none;
@@ -311,6 +317,13 @@ main .second-div-0 .div-1 p {
     font-weight: 700;
     font-style: bold;
 }
+
+.btn-div{
+    width: 250px;
+    position: absolute;
+    top: 410px;
+}
+
 .third-cont .third-0 button {
     width: 100%;
     height: 43.28px;
@@ -336,6 +349,7 @@ main .second-div-0 .div-1 p {
     background-color: #EEEEEE;
     margin-bottom:20px ;
     border-radius: 8px;
+    margin-left: -40px;
 }
 
 .forth-cont h1{
@@ -367,6 +381,7 @@ main .second-div-0 .div-1 p {
     margin-bottom: 20px;
     background-color: #EEEEEE;
     border-radius: 8px;
+    margin-left: -40px;
 }
 .fifth-cont h1 {
     text-align: center;
@@ -547,6 +562,7 @@ main .second-div-0 .div-1 p {
 /* article Style start */
 article{
     margin-bottom: 30px;
+    margin-left: -30px;
 }
 article h5{
     font-weight: 600;
@@ -569,12 +585,12 @@ article li{
 /* subscribe style start */
 
 .subscribe-div {
-    width: 1220px;
+    width: 1200px;
     height: 184px;
     background-color: #D9D9D9;
     border-radius: 8px 8px 0px 0px;
     display: flex;
-    margin-left: -20px;
+    margin-left: -40px;
 }
 .subscribe-div a {
     margin: 20px 0px 0px 20px;

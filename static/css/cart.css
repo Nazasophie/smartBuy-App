@@ -3,11 +3,15 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+p{
+    font-family: 'Roboto', sans-serif;
+}
 .big-container {
     display: flex;
     justify-content: center;
     padding: 20px;
+    margin: 70px 0px 0px -40px;
+    padding-top: 100px;
 }
 
 .first-box {
@@ -22,13 +26,19 @@
     justify-content: space-between;
     border-top: 2px solid;
     border-bottom: 2px solid;
-    margin-top: 10px;
+    position: relative;
+    /* margin-top: 10px; */
 }
 
 .item-1-div{
     display: flex;
     margin: 0px 0px 0px 20px;
     padding: 20px 0px;
+}
+.item-1-div img{
+    width: 122px;
+    height: 116px;
+    border-radius: 8px;
 }
 .item-1-div p{
     margin: 0px 0px 0px 10px;
@@ -42,33 +52,34 @@
     width: 17px;
     margin-right: 5px;
 }
+
+.item-total-div{
+    position: absolute;
+    left: 740px;
+    top: 100px;
+    display: flex;
+}
+
 .item-2-div p{
     font-size: 20px;
     font-weight: 400;
-    position: relative;
-    margin: 60px 0px 0px 0px;
-    padding: 0px 0px 0px 24px;
+    margin-top: 8px;
 }
 .item-2-div p .sort-left{
     width: 40px;
     height: 40px;
-    position: absolute;
-    left: -10px;
-    top: -8px;
     cursor: pointer;
 }
+
 .item-2-div p .sort-righ{
     width: 40px;
     height: 40px;
-    position: absolute;
-    left: 30px;
-    top: -8px;
     cursor: pointer;
 }
 
 .second-box {
     width: 277px;
-    height: 216px;
+    height: 230px;
     border-radius: 8px;
     background-color: #D9D9D9;
     margin-left: 10px;
@@ -90,12 +101,13 @@
 .second-box .subtotal-div img{
     position: absolute;
     left: -20px;
-    top: 3px;
+    top: 6px;
 }
 
 .checkout-btn-div{
     text-align: center;
     margin-top: 70px;
+    padding-bottom: -20px;
 }
 
 .second-box button {
