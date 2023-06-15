@@ -32,7 +32,7 @@
         <div class="price-div">
           <strong><img src="{% static 'images/naira.svg' %}" alt=""> {{products.price|floatformat:2|intcomma }}</strong>
         </div>
-        <div>
+        <div class="button-div">
           <button data-product="{{products.id}}" data-action="add" class="a-t-c add-btn update-cart">ADD TO CART</button>
           <button class="s-i"> <img src="{% static 'images/saved.svg' %}" alt=""> SAVE ITEM</button>
         </div>

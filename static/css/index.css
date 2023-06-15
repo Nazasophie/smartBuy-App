@@ -4,9 +4,6 @@
     box-sizing: border-box;
 }
 
-p{
-    font-family: 'Roboto', sans-serif;
-}
 
 body {
     max-width: 1200px;
@@ -192,7 +189,7 @@ aside img {
     display: flex;
     width: 900px;
     justify-content: center;
-    margin-top: 503px;
+    margin-top: 494px;
 }
 
 .navigation-auto div {
@@ -338,6 +335,10 @@ main .second-div-0 .div-1 p {
     background-color: rgb(216, 123, 30);
 }
 
+.star-div{
+    position: absolute;
+    top: 310px;
+}
 
 .checked {
     color: orange;

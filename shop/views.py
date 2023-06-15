@@ -19,20 +19,6 @@ def index(request):
 	return render(request, 'index.html', context)
 
 
-def signin(request):
-	
-	context = {}
-	return render(request, 'registration/signin.html', context)
-
-
-def signup(request):
-	
-	context = {}
-	return render(request, 'registration/signup.html', context)
-
-
-
-
 def cart(request):
 	data = cartData(request)
 
@@ -54,18 +40,6 @@ def checkout(request):
 	return render(request, 'checkout.html', context)
 
 
-def fashion(request):
-	data = cartData(request)
-
-	cartItems = data['cartItems']
-	order = data['order']
-	items = data['items']
-
-	fashions = Fashion.objects.all()
-	context = {'fashions':fashions, 'cartItems':cartItems}
-	return render(request, 'fashion.html', context)
-
-
 def productdetail(request, id):
 	data = cartData(request)
 	cartItems = data['cartItems']
@@ -76,6 +50,17 @@ def productdetail(request, id):
 	products = Product.objects.get(id=id)
 	context = {'products':products, 'cartItems':cartItems}
 	return render(request, 'product-detail.html', context)
+
+def fashion(request):
+	data = cartData(request)
+
+	cartItems = data['cartItems']
+	order = data['order']
+	items = data['items']
+
+	fashions = Fashion.objects.all()
+	context = {'fashions':fashions, 'cartItems':cartItems}
+	return render(request, 'fashion.html', context)
 
 
 def updateItem(request):

@@ -11,7 +11,7 @@
     <div class="third-0">
       {% for fashion in fashions %}
       <div class="item-0">
-        <a href="{% url 'productdetail' id=fashion.id %}">
+        <a href="{% url 'shop:productdetail' id=fashion.id %}">
           <img class="item-img-0" src="{{fashion.imageURL}}" alt="">
           <p class="item-description-p">{{fashion.name}}</p>
           <p class="amount-p"><img src="{% static 'images/naira.svg' %}" alt=""> {{fashion.price|floatformat:2|intcomma}}</p>
@@ -23,7 +23,7 @@
           <span class="fa fa-star checked"></span>
           <span class="fa fa-star"></span><br>
         </div>
-        <button data-product="{{fashion.id}}" data-action="add" class="a-t-c add-btn update-cart">ADD TO CART</button>
+        <button data-product="{{fashions.id}}" data-action="add" class="a-t-c add-btn update-cart">ADD TO CART</button>
       </div>
       {% endfor %}
 

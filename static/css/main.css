@@ -12,15 +12,29 @@ header {
     margin: auto;
     width: 1200px;
     height: 80px;
-    display: flex;
     align-items: center;
     background-color: #EEEEEE;
+    /* padding: 0px 20px 0px 20px; */
+    position: fixed;
+    z-index: 2;
+}
+.header-1 {
+    margin: auto;
+    /* width: 1200px; */
+    height: 80px;
+    display: flex;
+    align-items: center;
     padding: 0px 20px 0px 20px;
     position: fixed;
     /* margin-top: 50px; */
     z-index: 2;
 }
-
+.alert{
+    margin-top: 70px;
+}
+.alert strong{
+    font-size: 18px;
+}
 header .logo-div a img {
     width: 162px;
     height: 36px;

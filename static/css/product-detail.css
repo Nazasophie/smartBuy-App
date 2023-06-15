@@ -25,7 +25,7 @@
 
 .div{
     position: absolute;
-    top: 190px;
+    top: 0px;
 }
 
 .div-content{
@@ -55,7 +55,7 @@ color: yellow;
 
 
 .price-div {
-margin-top:10px;
+margin-top:210px;
 }
 
 strong{
@@ -66,6 +66,7 @@ strong{
 .price-div strong img{
     width: 25px;
 }
+
 
 .a-t-c{
     width: 307px; 

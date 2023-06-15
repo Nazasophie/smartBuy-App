@@ -31,7 +31,7 @@
           <h3><img src="{% static 'images/naira.svg' %}" alt="" /> {{order.get_cart_total|floatformat:2|intcomma}}</h3>
         </div>
         <div class="checkout-btn-div">
-          <a href="{% url 'checkout' %}"><button type="submit">CHECKOUT ({{order.get_cart_total|floatformat:2|intcomma}})</button></a>
+          <a href="{% url 'shop:checkout' %}"><button type="submit">CHECKOUT ({{order.get_cart_total|floatformat:2|intcomma}})</button></a>
         </div>
       </div>
     </div>

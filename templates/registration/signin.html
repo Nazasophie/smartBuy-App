@@ -1,39 +1,57 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="signin.css" />
-    <title>SmartBb Zuy</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'css/signin.css' %}" />
+    
+    <title>SmartBuy</title>
   </head>
   <div>
+    {% if messages %}
+            {% for message in messages %}
+            <div id="alert" class="alert alert-{{message.tags}}">
+                <strong>{{ message }}</strong>
+            </div>
+            {% endfor %}
+        {% endif %}
+        <script>
+            setTimeout (() => {
+                $("#alert").alert("close");
+            }, 3000)
+        </script>
     <div class="sign">
       <div class="img-div">
-        <a href="index.html">
+        <a href="{% url 'shop:index' %}">
           <img
             class="logo-img"
-            src="images/SMARTbuylogo.svg"
+            src="{% static 'images/SMARTbuylogo.svg' %}"
             alt="smartBuy logo"
           />
         </a>
       </div>
       <p class="sign-in">Sign In</p>
-      <form>
-        <label class="lab1">Email</label>
+      <form method="POST">
+        {% csrf_token %}
+        {% comment %} <label class="lab1">Email</label> {% endcomment %}
         <div class="email-div">
           <!-- <label>Email</label> -->
           <input
             class="email-input"
-            type="text"
-            placeholder="example@email.com"
+            type="email"
+            name="email"
+            placeholder="Email"
           />
         </div>
 
-        <label class="lab2">Password</label>
+        {% comment %} <label class="lab2">Password</label> {% endcomment %}
         <div class="pas-div">
           <!-- <label>Password</label> -->
-          <input type="text" placeholder="Enter Password" id="password-input" />
+          <input type="password" name="password" placeholder="Enter Password" id="password-input" />
           <label for="password-input" class="password-toggle"></label>
         </div>
         <div class="forgot-div">
@@ -45,18 +63,18 @@
       </form>
       <p class="sign-in-using">Or Sign in using</p>
       <div class="submit-div">
-        <button><img src="images/facebook.svg" alt="" />Facebook</button>
+        <button><img src="{% static 'images/facebook.svg' %}" alt="" />Facebook</button>
         <!-- <input type="button" value="FaceBook"> -->
       </div>
       <div class="submit-div google">
         <!-- <p><input type="button" value="Google"></p> -->
         <button class="google-button">
-          <img src="images/Google.svg" alt="" />Google
+          <img src="{% static 'images/Google.svg' %}" alt="" />Google
         </button>
       </div>
 
       <p class="dont-have-acct">
-        Don't have an account?<a href="signup.html"> Sign Up</a>
+        Don't have an account?<a href="{% url 'userauths:signup' %}"> Sign Up</a>
       </p>
     </div>
   </div>

@@ -11,7 +11,7 @@
           alt=""
       /></a>
       <div class="dropdown-content-categories">
-        <a href="{% url 'fashion' %}">All Fashion Item</a>
+        <a href="{% url 'shop:fashion' %}">All Fashion Item</a>
       </div>
     </div>
     <div class="dropdown-categories">
@@ -207,7 +207,7 @@
     <div class="third-0">
       {% for product in products %}
       <div class="item-0">
-        <a href="{% url 'productdetail' id=product.id %}">
+        <a href="{% url 'shop:productdetail' id=product.id %}">
           <img class="item-img-0" src="{{product.imageURL}}" alt="" />
           <p class="item-description-p">{{product.name}}</p>
           <p class="amount-p">
@@ -215,11 +215,13 @@
             {{product.price|floatformat:2|intcomma}}
           </p>
         </a>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star checked"></span>
-        <span class="fa fa-star"></span><br />
+        <div class="star-div">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span><br />
+          </div>
         <div class="btn-div">
           <button
             data-product="{{product.id}}"

@@ -29,7 +29,7 @@ body {
 }
 
 .img-div {
-  margin: -20px 0px -10px 0px;
+  margin: -20px 0px -10px -20px;
   width: 45%;
   text-align: center;
 }
@@ -76,10 +76,10 @@ body {
 }
 
 /* Styling for the form inputs */
-.sign input[type="text"],
+.sign input[type="email"],
 .sign input[type="password"] {
   width: 378px;
-  height: 30px;
+  height: 50px;
   padding: 10px;
   margin-bottom: 15px;
   border-radius: 8px;
@@ -97,7 +97,7 @@ input[type="text"]:focus {
 /* Styling for the forgot password link */
 
 .forgot-div {
-  margin-top: -30px;
+  margin: -10px 0px 0px -30px;
   text-align: center;
 }
 
@@ -131,7 +131,9 @@ input[type="text"]:focus {
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  width: 400px;
+  width: 378px;
+  height: 50px;
+  /* width: 400px; */
   line-height: 28.13px;
 }
 
@@ -153,21 +155,22 @@ button {
   font-weight: bold;
   border-radius: 8px;
   cursor: pointer;
-  width: 400px;
-  height: 62px;
-  margin: 0px 0px 5px 0px;
+  width: 378px;
+  height: 50px;
+  margin: -10px 0px 5px 0px;
   line-height: 28px;
   position: relative;
 }
 
 .google-button {
   background-color: #000000;
+  margin-top: 10px;
 }
 
 button img {
   width: 35px;
   position: absolute;
-  top: 15px;
+  top: 7px;
   left: 10px;
   /* margin: 5px 0px 0px 0px; */
 }
@@ -185,7 +188,7 @@ button img {
 
 .sign .dont-have-acct {
   /* text-align: right; */
-  margin: 0px 0px 0px 140px;
+  margin: 0px 0px 0px 120px;
 }
 
 .sign p:last-child a {
